@@ -1307,26 +1307,8 @@
     },
     {
       "gameName": "测试游戏",
-      "codeCount": 2,
+      "codeCount": 1,
       "codes": [
-        {
-          "code": "TEST2026",
-          "rewardDescription": "测试奖励：100钻石",
-          "sourcePlatform": "TapTap论坛",
-          "sourceUrl": "https://www.taptap.cn/test",
-          "expireDate": null,
-          "status": "active",
-          "codeType": "permanent",
-          "publishDate": "2026-01-21T10:41:40.860Z",
-          "verificationCount": 0,
-          "reviewStatus": "approved",
-          "crawlSource": "manual",
-          "crawlTime": "2026-01-21T10:41:40.860Z",
-          "accuracyRate": 95,
-          "verificationSuccessRate": 90,
-          "lastVerifiedTime": null,
-          "crawlerVersion": null
-        },
         {
           "code": "SYNC2026",
           "rewardDescription": "测试GitHub同步",
