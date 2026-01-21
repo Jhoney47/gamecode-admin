@@ -5,7 +5,7 @@
   "games": [
     {
       "gameName": "铃兰之剑",
-      "codeCount": 45,
+      "codeCount": 46,
       "codes": [
         {
           "code": "ZN5U3U6BUZ9",
@@ -546,6 +546,24 @@
           "publishDate": "2025-06-24T00:00:00.000Z",
           "verificationCount": 251,
           "reviewStatus": "approved"
+        },
+        {
+          "code": "123",
+          "rewardDescription": "无",
+          "sourcePlatform": "",
+          "sourceUrl": "",
+          "expireDate": null,
+          "status": "active",
+          "codeType": "permanent",
+          "publishDate": "2026-01-21T11:41:51.307Z",
+          "verificationCount": 0,
+          "reviewStatus": "approved",
+          "crawlSource": "manual",
+          "crawlTime": "2026-01-21T11:41:51.307Z",
+          "accuracyRate": null,
+          "verificationSuccessRate": null,
+          "lastVerifiedTime": null,
+          "crawlerVersion": null
         }
       ]
     },
