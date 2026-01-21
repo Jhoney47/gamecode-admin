@@ -45,11 +45,6 @@
             color: #155724;
         }
         
-        .sync-status.error {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        
         /* 布局容器 */
         .container {
             display: flex;
@@ -96,45 +91,69 @@
             color: #007bff;
         }
         
-        /* 游戏选择区域 */
-        .game-selector {
-            margin-top: 25px;
+        .stat-value.warning {
+            color: #ffc107;
         }
         
-        .game-selector label {
+        .stat-value.success {
+            color: #28a745;
+        }
+        
+        /* 分类选择 */
+        .category-selector {
+            margin: 20px 0;
+        }
+        
+        .category-btn {
             display: block;
-            font-size: 14px;
-            color: #666;
+            width: 100%;
+            padding: 12px;
             margin-bottom: 8px;
-            font-weight: 500;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            transition: all 0.2s;
+        }
+        
+        .category-btn:hover {
+            background: #f8f9fa;
+        }
+        
+        .category-btn.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        
+        /* 游戏选择区域 */
+        .game-selector {
+            margin: 20px 0;
         }
         
         .game-selector select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 14px;
             background: white;
             cursor: pointer;
         }
         
-        .game-selector select:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-        
-        /* 操作按钮组 */
+        /* 操作按钮 */
         .action-buttons {
             margin-top: 20px;
         }
         
         .btn {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 10px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 14px;
             font-weight: 500;
             cursor: pointer;
@@ -165,7 +184,7 @@
         }
         
         .btn-secondary:hover {
-            background: #545b62;
+            background: #5a6268;
         }
         
         /* 主内容区 */
@@ -182,31 +201,26 @@
             margin-bottom: 20px;
         }
         
-        .content-header h2 {
+        .content-title {
             font-size: 20px;
-            color: #333;
             font-weight: 600;
+            color: #333;
         }
         
         .search-box {
             padding: 8px 15px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 6px;
             font-size: 14px;
-            width: 300px;
-        }
-        
-        .search-box:focus {
-            outline: none;
-            border-color: #007bff;
+            width: 250px;
         }
         
         /* 兑换码表格 */
         .codes-table {
             background: white;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         
         table {
@@ -216,65 +230,67 @@
         
         thead {
             background: #f8f9fa;
-            border-bottom: 2px solid #dee2e6;
         }
         
         th {
-            padding: 12px 15px;
+            padding: 15px;
             text-align: left;
             font-size: 13px;
             font-weight: 600;
-            color: #495057;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: #666;
+            border-bottom: 2px solid #e0e0e0;
         }
         
-        tbody tr {
-            border-bottom: 1px solid #e9ecef;
-            transition: background 0.2s;
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
         }
         
         tbody tr:hover {
             background: #f8f9fa;
         }
         
-        td {
-            padding: 12px 15px;
-            font-size: 14px;
-            color: #333;
-        }
-        
-        .code-cell {
-            font-family: 'Courier New', monospace;
+        .code-text {
             font-weight: 600;
             color: #007bff;
+            font-size: 15px;
         }
         
-        /* 状态标签 */
-        .status-badge {
+        .badge {
             display: inline-block;
             padding: 4px 10px;
-            border-radius: 12px;
+            border-radius: 4px;
             font-size: 12px;
             font-weight: 500;
         }
         
-        .status-active {
+        .badge-success {
             background: #d4edda;
             color: #155724;
         }
         
-        .status-expired {
+        .badge-danger {
             background: #f8d7da;
             color: #721c24;
         }
         
-        /* 准确率显示 */
+        .badge-warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .badge-info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .badge-secondary {
+            background: #e2e3e5;
+            color: #6c757d;
+        }
+        
         .accuracy-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 12px;
             font-weight: 600;
         }
         
@@ -293,55 +309,46 @@
             color: #721c24;
         }
         
-        .accuracy-na {
-            background: #e2e3e5;
-            color: #6c757d;
+        /* 操作按钮 */
+        .action-btns {
+            display: flex;
+            gap: 8px;
         }
         
-        /* 操作按钮 */
         .action-btn {
             padding: 6px 12px;
-            margin-right: 5px;
-            border: 1px solid #ddd;
+            border: none;
             border-radius: 4px;
             font-size: 12px;
-            background: white;
             cursor: pointer;
             transition: all 0.2s;
         }
         
-        .action-btn:hover {
-            background: #f8f9fa;
-        }
-        
-        .action-btn.view {
-            color: #007bff;
-            border-color: #007bff;
-        }
-        
-        .action-btn.view:hover {
+        .btn-view {
             background: #007bff;
             color: white;
         }
         
-        .action-btn.edit {
-            color: #28a745;
-            border-color: #28a745;
+        .btn-view:hover {
+            background: #0056b3;
         }
         
-        .action-btn.edit:hover {
+        .btn-edit {
             background: #28a745;
             color: white;
         }
         
-        .action-btn.delete {
-            color: #dc3545;
-            border-color: #dc3545;
+        .btn-edit:hover {
+            background: #218838;
         }
         
-        .action-btn.delete:hover {
+        .btn-delete {
             background: #dc3545;
             color: white;
+        }
+        
+        .btn-delete:hover {
+            background: #c82333;
         }
         
         /* 模态框 */
@@ -358,107 +365,83 @@
             justify-content: center;
         }
         
-        .modal.show {
+        .modal.active {
             display: flex;
         }
         
         .modal-content {
             background: white;
             border-radius: 8px;
-            width: 90%;
+            padding: 30px;
             max-width: 600px;
+            width: 90%;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
         
         .modal-header {
-            padding: 20px 25px;
-            border-bottom: 1px solid #e9ecef;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
         }
         
-        .modal-header h3 {
-            font-size: 18px;
-            color: #333;
+        .modal-title {
+            font-size: 20px;
             font-weight: 600;
         }
         
-        .modal-close {
-            font-size: 28px;
-            color: #999;
-            cursor: pointer;
+        .close-btn {
             background: none;
             border: none;
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            line-height: 1;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
         }
         
-        .modal-close:hover {
+        .close-btn:hover {
             color: #333;
         }
         
         .modal-body {
-            padding: 25px;
+            margin-bottom: 20px;
         }
         
         .form-group {
             margin-bottom: 20px;
         }
         
-        .form-group label {
+        .form-label {
             display: block;
+            margin-bottom: 8px;
             font-size: 14px;
             font-weight: 500;
-            color: #495057;
-            margin-bottom: 8px;
+            color: #333;
         }
         
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-input {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
             font-size: 14px;
         }
         
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-input:focus {
             outline: none;
             border-color: #007bff;
         }
         
-        .form-group textarea {
-            resize: vertical;
+        textarea.form-input {
             min-height: 80px;
+            resize: vertical;
         }
         
-        .modal-footer {
-            padding: 15px 25px;
-            border-top: 1px solid #e9ecef;
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-        }
-        
-        .modal-footer .btn {
-            width: auto;
-            margin: 0;
-            padding: 10px 20px;
-        }
-        
-        /* 详情查看 */
         .detail-row {
             display: flex;
-            padding: 12px 0;
-            border-bottom: 1px solid #e9ecef;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .detail-row:last-child {
@@ -467,25 +450,26 @@
         
         .detail-label {
             width: 140px;
-            font-weight: 600;
-            color: #495057;
             font-size: 14px;
+            color: #666;
+            font-weight: 500;
         }
         
         .detail-value {
             flex: 1;
-            color: #333;
             font-size: 14px;
+            color: #333;
         }
         
-        .detail-value.code {
-            font-family: 'Courier New', monospace;
-            font-weight: 600;
+        .detail-value a {
             color: #007bff;
-            font-size: 16px;
+            text-decoration: none;
         }
         
-        /* 空状态 */
+        .detail-value a:hover {
+            text-decoration: underline;
+        }
+        
         .empty-state {
             text-align: center;
             padding: 60px 20px;
@@ -493,8 +477,8 @@
         }
         
         .empty-state-icon {
-            font-size: 64px;
-            margin-bottom: 20px;
+            font-size: 48px;
+            margin-bottom: 15px;
         }
         
         .empty-state-text {
@@ -503,46 +487,49 @@
     </style>
 </head>
 <body>
-    <!-- 顶部标题栏 -->
     <div class="header">
-        <h1>🎮 GameCode 后台管理系统 <span class="sync-status success" id="syncStatus">✅ 已同步</span></h1>
+        <h1>🎮 GameCode 后台管理系统 <span class="sync-status success" id="syncStatus">已同步</span></h1>
     </div>
     
-    <!-- 主容器 -->
     <div class="container">
         <!-- 左侧边栏 -->
         <div class="sidebar">
             <h2>📊 数据统计</h2>
-            
             <div class="stat-card">
                 <div class="stat-label">总游戏数</div>
                 <div class="stat-value" id="totalGames">0</div>
             </div>
-            
             <div class="stat-card">
                 <div class="stat-label">总兑换码数</div>
                 <div class="stat-value highlight" id="totalCodes">0</div>
             </div>
-            
             <div class="stat-card">
-                <div class="stat-label">有效兑换码</div>
-                <div class="stat-value" id="activeCodes">0</div>
+                <div class="stat-label">即将过期</div>
+                <div class="stat-value warning" id="expiringSoon">0</div>
             </div>
-            
+            <div class="stat-card">
+                <div class="stat-label">最新发布</div>
+                <div class="stat-value success" id="recentlyAdded">0</div>
+            </div>
             <div class="stat-card">
                 <div class="stat-label">平均准确率</div>
                 <div class="stat-value" id="avgAccuracy">N/A</div>
             </div>
             
-            <!-- 游戏选择 -->
+            <h2>🏷️ 分类筛选</h2>
+            <div class="category-selector">
+                <button class="category-btn active" data-category="all">📋 全部兑换码</button>
+                <button class="category-btn" data-category="expiring">⏰ 即将过期 (7天内)</button>
+                <button class="category-btn" data-category="recent">🆕 最新发布 (7天内)</button>
+            </div>
+            
+            <h2>🎮 选择游戏</h2>
             <div class="game-selector">
-                <label>选择游戏</label>
                 <select id="gameSelect">
                     <option value="">-- 请选择游戏 --</option>
                 </select>
             </div>
             
-            <!-- 操作按钮 -->
             <div class="action-buttons">
                 <button class="btn btn-primary" onclick="showAddGameModal()">➕ 添加游戏</button>
                 <button class="btn btn-success" onclick="showAddCodeModal()">➕ 添加兑换码</button>
@@ -553,15 +540,32 @@
         <!-- 主内容区 -->
         <div class="main-content">
             <div class="content-header">
-                <h2 id="contentTitle">请选择游戏</h2>
-                <input type="text" class="search-box" id="searchBox" placeholder="搜索兑换码..." onkeyup="filterCodes()">
+                <div class="content-title" id="contentTitle">全部兑换码</div>
+                <input type="text" class="search-box" id="searchBox" placeholder="搜索兑换码...">
             </div>
             
-            <div class="codes-table" id="codesTableContainer">
-                <div class="empty-state">
-                    <div class="empty-state-icon">📦</div>
-                    <div class="empty-state-text">请在左侧选择游戏查看兑换码</div>
-                </div>
+            <div class="codes-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>兑换码</th>
+                            <th>奖励</th>
+                            <th>状态</th>
+                            <th>截止日期</th>
+                            <th>来源</th>
+                            <th>准确率</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="codesTableBody">
+                        <tr>
+                            <td colspan="7" class="empty-state">
+                                <div class="empty-state-icon">📦</div>
+                                <div class="empty-state-text">暂无数据</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -570,101 +574,181 @@
     <div class="modal" id="viewModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>兑换码详情</h3>
-                <button class="modal-close" onclick="closeModal('viewModal')">&times;</button>
+                <h2 class="modal-title">兑换码详情</h2>
+                <button class="close-btn" onclick="closeModal('viewModal')">&times;</button>
             </div>
             <div class="modal-body" id="viewModalBody">
-                <!-- 动态内容 -->
+                <!-- 详情内容 -->
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal('viewModal')">关闭</button>
-            </div>
+            <button class="btn btn-secondary" onclick="closeModal('viewModal')">关闭</button>
         </div>
     </div>
     
-    <!-- 添加/编辑兑换码模态框 -->
-    <div class="modal" id="codeModal">
+    <!-- 编辑模态框 -->
+    <div class="modal" id="editModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="codeModalTitle">添加兑换码</h3>
-                <button class="modal-close" onclick="closeModal('codeModal')">&times;</button>
+                <h2 class="modal-title">编辑兑换码</h2>
+                <button class="close-btn" onclick="closeModal('editModal')">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <label>游戏名称 *</label>
-                    <input type="text" id="codeGameName" placeholder="请输入游戏名称" required>
-                </div>
-                <div class="form-group">
-                    <label>兑换码 *</label>
-                    <input type="text" id="codeCode" placeholder="请输入兑换码" required>
-                </div>
-                <div class="form-group">
-                    <label>奖励描述 *</label>
-                    <textarea id="codeReward" placeholder="请输入奖励描述" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>来源平台</label>
-                    <input type="text" id="codeSource" placeholder="如：TapTap论坛、官方微博">
-                </div>
-                <div class="form-group">
-                    <label>来源URL</label>
-                    <input type="url" id="codeUrl" placeholder="https://...">
-                </div>
-                <div class="form-group">
-                    <label>状态</label>
-                    <select id="codeStatus">
-                        <option value="active">有效</option>
-                        <option value="expired">已过期</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>爬取来源</label>
-                    <select id="codeCrawlSource">
-                        <option value="manual">手动</option>
-                        <option value="auto">自动</option>
-                        <option value="api">API</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>准确率 (0-100)</label>
-                    <input type="number" id="codeAccuracy" min="0" max="100" placeholder="如：95">
-                </div>
-                <div class="form-group">
-                    <label>验证成功率 (0-100)</label>
-                    <input type="number" id="codeVerification" min="0" max="100" placeholder="如：90">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal('codeModal')">取消</button>
-                <button class="btn btn-primary" onclick="saveCode()">保存</button>
+                <form id="editForm">
+                    <input type="hidden" id="editGameName">
+                    <input type="hidden" id="editOriginalCode">
+                    
+                    <div class="form-group">
+                        <label class="form-label">兑换码</label>
+                        <input type="text" class="form-input" id="editCode" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">奖励描述</label>
+                        <textarea class="form-input" id="editReward" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">来源平台</label>
+                        <input type="text" class="form-input" id="editSource">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">来源URL</label>
+                        <input type="url" class="form-input" id="editSourceUrl">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">截止日期</label>
+                        <input type="date" class="form-input" id="editExpireDate">
+                        <small style="color: #666; font-size: 12px;">留空表示永久有效</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">状态</label>
+                        <select class="form-input" id="editStatus">
+                            <option value="active">有效</option>
+                            <option value="expired">已过期</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">爬取来源</label>
+                        <select class="form-input" id="editCrawlSource">
+                            <option value="manual">手动</option>
+                            <option value="auto">自动</option>
+                            <option value="api">API</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">准确率 (%)</label>
+                        <input type="number" class="form-input" id="editAccuracy" min="0" max="100">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">验证成功率 (%)</label>
+                        <input type="number" class="form-input" id="editVerificationRate" min="0" max="100">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">保存</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('editModal')">取消</button>
+                </form>
             </div>
         </div>
     </div>
     
     <!-- 添加游戏模态框 -->
-    <div class="modal" id="gameModal">
+    <div class="modal" id="addGameModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>添加游戏</h3>
-                <button class="modal-close" onclick="closeModal('gameModal')">&times;</button>
+                <h2 class="modal-title">添加游戏</h2>
+                <button class="close-btn" onclick="closeModal('addGameModal')">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <label>游戏名称 *</label>
-                    <input type="text" id="newGameName" placeholder="请输入游戏名称" required>
-                </div>
+                <form id="addGameForm">
+                    <div class="form-group">
+                        <label class="form-label">游戏名称</label>
+                        <input type="text" class="form-input" id="newGameName" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">添加</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('addGameModal')">取消</button>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal('gameModal')">取消</button>
-                <button class="btn btn-primary" onclick="addGame()">添加</button>
+        </div>
+    </div>
+    
+    <!-- 添加兑换码模态框 -->
+    <div class="modal" id="addCodeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">添加兑换码</h2>
+                <button class="close-btn" onclick="closeModal('addCodeModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addCodeForm">
+                    <div class="form-group">
+                        <label class="form-label">选择游戏</label>
+                        <select class="form-input" id="addCodeGame" required>
+                            <option value="">-- 请选择游戏 --</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">兑换码</label>
+                        <input type="text" class="form-input" id="addCode" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">奖励描述</label>
+                        <textarea class="form-input" id="addReward" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">来源平台</label>
+                        <input type="text" class="form-input" id="addSource">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">来源URL</label>
+                        <input type="url" class="form-input" id="addSourceUrl">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">截止日期</label>
+                        <input type="date" class="form-input" id="addExpireDate">
+                        <small style="color: #666; font-size: 12px;">留空表示永久有效</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">爬取来源</label>
+                        <select class="form-input" id="addCrawlSource">
+                            <option value="manual">手动</option>
+                            <option value="auto">自动</option>
+                            <option value="api">API</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">准确率 (%)</label>
+                        <input type="number" class="form-input" id="addAccuracy" min="0" max="100">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">验证成功率 (%)</label>
+                        <input type="number" class="form-input" id="addVerificationRate" min="0" max="100">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">添加</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('addCodeModal')">取消</button>
+                </form>
             </div>
         </div>
     </div>
     
     <script>
         let gameData = { games: [] };
-        let currentGame = null;
-        let editingCode = null;
+        let currentCategory = 'all';
+        let currentGame = '';
+        let filteredCodes = [];
         
         // 加载数据
         async function loadData() {
@@ -673,318 +757,443 @@
                 gameData = await response.json();
                 updateStats();
                 updateGameSelect();
-                updateSyncStatus(true);
+                filterAndDisplayCodes();
             } catch (error) {
                 console.error('加载数据失败:', error);
-                updateSyncStatus(false);
-                alert('加载数据失败：' + error.message);
             }
         }
         
-        // 更新统计数据
+        // 更新统计信息
         function updateStats() {
-            const stats = {
-                totalGames: gameData.games.length,
-                totalCodes: 0,
-                activeCodes: 0,
-                totalAccuracy: 0,
-                accuracyCount: 0
-            };
+            const stats = calculateStats();
+            document.getElementById('totalGames').textContent = stats.totalGames;
+            document.getElementById('totalCodes').textContent = stats.totalCodes;
+            document.getElementById('expiringSoon').textContent = stats.expiringSoon;
+            document.getElementById('recentlyAdded').textContent = stats.recentlyAdded;
+            document.getElementById('avgAccuracy').textContent = stats.avgAccuracy;
+        }
+        
+        // 计算统计数据
+        function calculateStats() {
+            let totalCodes = 0;
+            let expiringSoon = 0;
+            let recentlyAdded = 0;
+            let totalAccuracy = 0;
+            let accuracyCount = 0;
+            
+            const now = new Date();
+            const sevenDaysLater = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+            const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
             
             gameData.games.forEach(game => {
-                stats.totalCodes += game.codeCount;
+                totalCodes += game.codeCount;
                 game.codes.forEach(code => {
-                    if (code.status === 'active') stats.activeCodes++;
+                    // 即将过期
+                    if (code.expireDate) {
+                        const expireDate = new Date(code.expireDate);
+                        if (expireDate > now && expireDate <= sevenDaysLater) {
+                            expiringSoon++;
+                        }
+                    }
+                    
+                    // 最新发布
+                    const publishDate = new Date(code.publishDate);
+                    if (publishDate >= sevenDaysAgo) {
+                        recentlyAdded++;
+                    }
+                    
+                    // 准确率
                     if (code.accuracyRate !== null && code.accuracyRate !== undefined) {
-                        stats.totalAccuracy += code.accuracyRate;
-                        stats.accuracyCount++;
+                        totalAccuracy += code.accuracyRate;
+                        accuracyCount++;
                     }
                 });
             });
             
-            document.getElementById('totalGames').textContent = stats.totalGames;
-            document.getElementById('totalCodes').textContent = stats.totalCodes;
-            document.getElementById('activeCodes').textContent = stats.activeCodes;
-            
-            if (stats.accuracyCount > 0) {
-                const avg = (stats.totalAccuracy / stats.accuracyCount).toFixed(1);
-                document.getElementById('avgAccuracy').textContent = avg + '%';
-            } else {
-                document.getElementById('avgAccuracy').textContent = 'N/A';
-            }
+            return {
+                totalGames: gameData.games.length,
+                totalCodes,
+                expiringSoon,
+                recentlyAdded,
+                avgAccuracy: accuracyCount > 0 ? (totalAccuracy / accuracyCount).toFixed(1) + '%' : 'N/A'
+            };
         }
         
-        // 更新游戏选择下拉框
+        // 更新游戏选择框
         function updateGameSelect() {
             const select = document.getElementById('gameSelect');
-            const currentValue = select.value;
+            const addCodeSelect = document.getElementById('addCodeGame');
+            
             select.innerHTML = '<option value="">-- 请选择游戏 --</option>';
+            addCodeSelect.innerHTML = '<option value="">-- 请选择游戏 --</option>';
             
             gameData.games.forEach(game => {
-                const option = document.createElement('option');
-                option.value = game.gameName;
-                option.textContent = `${game.gameName} (${game.codeCount})`;
-                select.appendChild(option);
+                const option1 = document.createElement('option');
+                option1.value = game.gameName;
+                option1.textContent = `${game.gameName} (${game.codeCount})`;
+                select.appendChild(option1);
+                
+                const option2 = document.createElement('option');
+                option2.value = game.gameName;
+                option2.textContent = game.gameName;
+                addCodeSelect.appendChild(option2);
             });
-            
-            if (currentValue) {
-                select.value = currentValue;
-                loadGameCodes(currentValue);
-            }
         }
         
-        // 加载游戏的兑换码
-        function loadGameCodes(gameName) {
-            currentGame = gameData.games.find(g => g.gameName === gameName);
-            if (!currentGame) return;
+        // 过滤并显示兑换码
+        function filterAndDisplayCodes() {
+            const now = new Date();
+            const sevenDaysLater = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+            const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
             
-            document.getElementById('contentTitle').textContent = `${gameName} - ${currentGame.codeCount} 个兑换码`;
+            filteredCodes = [];
             
-            if (currentGame.codes.length === 0) {
-                document.getElementById('codesTableContainer').innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">📭</div>
-                        <div class="empty-state-text">该游戏暂无兑换码</div>
-                    </div>
+            gameData.games.forEach(game => {
+                // 如果选择了特定游戏，只显示该游戏的兑换码
+                if (currentGame && game.gameName !== currentGame) {
+                    return;
+                }
+                
+                game.codes.forEach(code => {
+                    let shouldInclude = false;
+                    
+                    if (currentCategory === 'all') {
+                        shouldInclude = true;
+                    } else if (currentCategory === 'expiring') {
+                        // 即将过期：7天内过期
+                        if (code.expireDate) {
+                            const expireDate = new Date(code.expireDate);
+                            if (expireDate > now && expireDate <= sevenDaysLater) {
+                                shouldInclude = true;
+                            }
+                        }
+                    } else if (currentCategory === 'recent') {
+                        // 最新发布：7天内发布
+                        const publishDate = new Date(code.publishDate);
+                        if (publishDate >= sevenDaysAgo) {
+                            shouldInclude = true;
+                        }
+                    }
+                    
+                    if (shouldInclude) {
+                        filteredCodes.push({
+                            ...code,
+                            gameName: game.gameName
+                        });
+                    }
+                });
+            });
+            
+            // 搜索过滤
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            if (searchTerm) {
+                filteredCodes = filteredCodes.filter(code => 
+                    code.code.toLowerCase().includes(searchTerm) ||
+                    code.rewardDescription.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            displayCodes();
+        }
+        
+        // 显示兑换码
+        function displayCodes() {
+            const tbody = document.getElementById('codesTableBody');
+            
+            if (filteredCodes.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" class="empty-state">
+                            <div class="empty-state-icon">📦</div>
+                            <div class="empty-state-text">暂无数据</div>
+                        </td>
+                    </tr>
                 `;
                 return;
             }
             
-            renderCodesTable(currentGame.codes);
+            tbody.innerHTML = filteredCodes.map(code => {
+                const statusBadge = getStatusBadge(code);
+                const accuracyBadge = getAccuracyBadge(code.accuracyRate);
+                const expireDateText = getExpireDateText(code.expireDate);
+                
+                return `
+                    <tr>
+                        <td>
+                            <div class="code-text">${code.code}</div>
+                            <small style="color: #666;">${code.gameName}</small>
+                        </td>
+                        <td>${code.rewardDescription}</td>
+                        <td>${statusBadge}</td>
+                        <td>${expireDateText}</td>
+                        <td>${code.sourcePlatform || '-'}</td>
+                        <td>${accuracyBadge}</td>
+                        <td>
+                            <div class="action-btns">
+                                <button class="action-btn btn-view" onclick="viewCode('${code.gameName}', '${code.code}')">查看</button>
+                                <button class="action-btn btn-edit" onclick="editCode('${code.gameName}', '${code.code}')">编辑</button>
+                                <button class="action-btn btn-delete" onclick="deleteCode('${code.gameName}', '${code.code}')">删除</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
         }
         
-        // 渲染兑换码表格
-        function renderCodesTable(codes) {
-            const html = `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>兑换码</th>
-                            <th>奖励</th>
-                            <th>状态</th>
-                            <th>来源</th>
-                            <th>准确率</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${codes.map((code, index) => `
-                            <tr>
-                                <td class="code-cell">${code.code}</td>
-                                <td>${code.rewardDescription || '-'}</td>
-                                <td>
-                                    <span class="status-badge ${code.status === 'active' ? 'status-active' : 'status-expired'}">
-                                        ${code.status === 'active' ? '有效' : '已过期'}
-                                    </span>
-                                </td>
-                                <td>${code.sourcePlatform || '-'}</td>
-                                <td>${getAccuracyBadge(code.accuracyRate)}</td>
-                                <td>
-                                    <button class="action-btn view" onclick="viewCodeDetail(${index})">查看</button>
-                                    <button class="action-btn edit" onclick="editCode(${index})">编辑</button>
-                                    <button class="action-btn delete" onclick="deleteCode(${index})">删除</button>
-                                </td>
-                            </tr>
-                        `).join('')}
-                    </tbody>
-                </table>
-            `;
-            document.getElementById('codesTableContainer').innerHTML = html;
+        // 获取状态徽章
+        function getStatusBadge(code) {
+            const now = new Date();
+            
+            // 检查是否过期
+            if (code.expireDate) {
+                const expireDate = new Date(code.expireDate);
+                if (expireDate < now) {
+                    return '<span class="badge badge-danger">已过期</span>';
+                }
+                
+                // 检查是否即将过期（7天内）
+                const sevenDaysLater = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+                if (expireDate <= sevenDaysLater) {
+                    return '<span class="badge badge-warning">即将过期</span>';
+                }
+            }
+            
+            // 检查是否最新发布（7天内）
+            const publishDate = new Date(code.publishDate);
+            const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+            if (publishDate >= sevenDaysAgo) {
+                return '<span class="badge badge-info">🆕 最新</span>';
+            }
+            
+            return '<span class="badge badge-success">有效</span>';
         }
         
-        // 获取准确率标签
+        // 获取准确率徽章
         function getAccuracyBadge(rate) {
             if (rate === null || rate === undefined) {
-                return '<span class="accuracy-badge accuracy-na">N/A</span>';
+                return '<span class="badge badge-secondary">N/A</span>';
             }
             
             let className = 'accuracy-low';
             if (rate >= 90) className = 'accuracy-high';
             else if (rate >= 70) className = 'accuracy-medium';
             
-            return `<span class="accuracy-badge ${className}">${rate}%</span>`;
+            return `<span class="badge accuracy-badge ${className}">${rate}%</span>`;
+        }
+        
+        // 获取截止日期文本
+        function getExpireDateText(expireDate) {
+            if (!expireDate) {
+                return '<span style="color: #28a745;">永久有效</span>';
+            }
+            
+            const date = new Date(expireDate);
+            const now = new Date();
+            
+            if (date < now) {
+                return `<span style="color: #dc3545;">${date.toLocaleDateString('zh-CN')}</span>`;
+            }
+            
+            const daysLeft = Math.ceil((date - now) / (1000 * 60 * 60 * 24));
+            if (daysLeft <= 7) {
+                return `<span style="color: #ffc107;">${date.toLocaleDateString('zh-CN')} (${daysLeft}天)</span>`;
+            }
+            
+            return date.toLocaleDateString('zh-CN');
         }
         
         // 查看兑换码详情
-        function viewCodeDetail(index) {
-            const code = currentGame.codes[index];
-            const html = `
+        function viewCode(gameName, code) {
+            const game = gameData.games.find(g => g.gameName === gameName);
+            const codeData = game.codes.find(c => c.code === code);
+            
+            const modalBody = document.getElementById('viewModalBody');
+            modalBody.innerHTML = `
                 <div class="detail-row">
                     <div class="detail-label">兑换码</div>
-                    <div class="detail-value code">${code.code}</div>
+                    <div class="detail-value"><strong style="color: #007bff; font-size: 18px;">${codeData.code}</strong></div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">游戏</div>
+                    <div class="detail-value">${gameName}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">奖励描述</div>
-                    <div class="detail-value">${code.rewardDescription || '-'}</div>
+                    <div class="detail-value">${codeData.rewardDescription}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">状态</div>
-                    <div class="detail-value">
-                        <span class="status-badge ${code.status === 'active' ? 'status-active' : 'status-expired'}">
-                            ${code.status === 'active' ? '有效' : '已过期'}
-                        </span>
-                    </div>
+                    <div class="detail-value">${getStatusBadge(codeData)}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">截止日期</div>
+                    <div class="detail-value">${getExpireDateText(codeData.expireDate)}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">来源平台</div>
-                    <div class="detail-value">${code.sourcePlatform || '-'}</div>
+                    <div class="detail-value">${codeData.sourcePlatform || '-'}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">来源URL</div>
-                    <div class="detail-value">${code.sourceUrl ? `<a href="${code.sourceUrl}" target="_blank">${code.sourceUrl}</a>` : '-'}</div>
+                    <div class="detail-value">${codeData.sourceUrl ? `<a href="${codeData.sourceUrl}" target="_blank">${codeData.sourceUrl}</a>` : '-'}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">爬取来源</div>
-                    <div class="detail-value">${code.crawlSource === 'manual' ? '手动' : code.crawlSource === 'auto' ? '自动' : 'API'}</div>
+                    <div class="detail-value">${codeData.crawlSource || '-'}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">爬取时间</div>
-                    <div class="detail-value">${code.crawlTime ? new Date(code.crawlTime).toLocaleString('zh-CN') : '-'}</div>
+                    <div class="detail-value">${codeData.crawlTime ? new Date(codeData.crawlTime).toLocaleString('zh-CN') : '-'}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">准确率</div>
-                    <div class="detail-value">${getAccuracyBadge(code.accuracyRate)}</div>
+                    <div class="detail-value">${getAccuracyBadge(codeData.accuracyRate)}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">验证成功率</div>
-                    <div class="detail-value">${code.verificationSuccessRate !== null && code.verificationSuccessRate !== undefined ? code.verificationSuccessRate + '%' : '-'}</div>
+                    <div class="detail-value">${codeData.verificationSuccessRate ? codeData.verificationSuccessRate + '%' : '-'}</div>
                 </div>
                 <div class="detail-row">
                     <div class="detail-label">发布时间</div>
-                    <div class="detail-value">${code.publishDate ? new Date(code.publishDate).toLocaleString('zh-CN') : '-'}</div>
+                    <div class="detail-value">${new Date(codeData.publishDate).toLocaleString('zh-CN')}</div>
                 </div>
             `;
             
-            document.getElementById('viewModalBody').innerHTML = html;
-            showModal('viewModal');
+            openModal('viewModal');
         }
         
         // 编辑兑换码
-        function editCode(index) {
-            editingCode = index;
-            const code = currentGame.codes[index];
+        function editCode(gameName, code) {
+            const game = gameData.games.find(g => g.gameName === gameName);
+            const codeData = game.codes.find(c => c.code === code);
             
-            document.getElementById('codeModalTitle').textContent = '编辑兑换码';
-            document.getElementById('codeGameName').value = currentGame.gameName;
-            document.getElementById('codeGameName').disabled = true;
-            document.getElementById('codeCode').value = code.code;
-            document.getElementById('codeReward').value = code.rewardDescription || '';
-            document.getElementById('codeSource').value = code.sourcePlatform || '';
-            document.getElementById('codeUrl').value = code.sourceUrl || '';
-            document.getElementById('codeStatus').value = code.status || 'active';
-            document.getElementById('codeCrawlSource').value = code.crawlSource || 'manual';
-            document.getElementById('codeAccuracy').value = code.accuracyRate || '';
-            document.getElementById('codeVerification').value = code.verificationSuccessRate || '';
+            document.getElementById('editGameName').value = gameName;
+            document.getElementById('editOriginalCode').value = code;
+            document.getElementById('editCode').value = codeData.code;
+            document.getElementById('editReward').value = codeData.rewardDescription;
+            document.getElementById('editSource').value = codeData.sourcePlatform || '';
+            document.getElementById('editSourceUrl').value = codeData.sourceUrl || '';
+            document.getElementById('editExpireDate').value = codeData.expireDate ? codeData.expireDate.split('T')[0] : '';
+            document.getElementById('editStatus').value = codeData.status;
+            document.getElementById('editCrawlSource').value = codeData.crawlSource || 'manual';
+            document.getElementById('editAccuracy').value = codeData.accuracyRate || '';
+            document.getElementById('editVerificationRate').value = codeData.verificationSuccessRate || '';
             
-            showModal('codeModal');
+            openModal('editModal');
         }
         
         // 删除兑换码
-        async function deleteCode(index) {
-            if (!confirm('确定要删除这个兑换码吗？')) return;
+        async function deleteCode(gameName, code) {
+            if (!confirm(`确定要删除兑换码 "${code}" 吗？`)) {
+                return;
+            }
             
-            const code = currentGame.codes[index];
             try {
-                const response = await fetch(`/api/games/${encodeURIComponent(currentGame.gameName)}/codes/${encodeURIComponent(code.code)}`, {
+                const response = await fetch(`/api/games/${encodeURIComponent(gameName)}/codes/${encodeURIComponent(code)}`, {
                     method: 'DELETE'
                 });
                 
                 if (response.ok) {
-                    await loadData();
-                    loadGameCodes(currentGame.gameName);
+                    alert('删除成功');
+                    loadData();
                 } else {
                     alert('删除失败');
                 }
             } catch (error) {
                 console.error('删除失败:', error);
-                alert('删除失败：' + error.message);
+                alert('删除失败');
             }
         }
         
-        // 显示添加兑换码模态框
+        // 模态框操作
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+        
+        function showAddGameModal() {
+            openModal('addGameModal');
+        }
+        
         function showAddCodeModal() {
-            editingCode = null;
-            document.getElementById('codeModalTitle').textContent = '添加兑换码';
-            document.getElementById('codeGameName').value = currentGame ? currentGame.gameName : '';
-            document.getElementById('codeGameName').disabled = false;
-            document.getElementById('codeCode').value = '';
-            document.getElementById('codeReward').value = '';
-            document.getElementById('codeSource').value = '';
-            document.getElementById('codeUrl').value = '';
-            document.getElementById('codeStatus').value = 'active';
-            document.getElementById('codeCrawlSource').value = 'manual';
-            document.getElementById('codeAccuracy').value = '';
-            document.getElementById('codeVerification').value = '';
-            
-            showModal('codeModal');
+            openModal('addCodeModal');
         }
         
-        // 保存兑换码
-        async function saveCode() {
-            const gameName = document.getElementById('codeGameName').value.trim();
-            const code = document.getElementById('codeCode').value.trim();
-            const reward = document.getElementById('codeReward').value.trim();
+        // 分类切换
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentCategory = this.dataset.category;
+                
+                // 更新标题
+                let title = '全部兑换码';
+                if (currentCategory === 'expiring') title = '即将过期 (7天内)';
+                if (currentCategory === 'recent') title = '最新发布 (7天内)';
+                document.getElementById('contentTitle').textContent = title;
+                
+                filterAndDisplayCodes();
+            });
+        });
+        
+        // 游戏选择
+        document.getElementById('gameSelect').addEventListener('change', function() {
+            currentGame = this.value;
+            filterAndDisplayCodes();
+        });
+        
+        // 搜索
+        document.getElementById('searchBox').addEventListener('input', function() {
+            filterAndDisplayCodes();
+        });
+        
+        // 表单提交
+        document.getElementById('editForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
             
-            if (!gameName || !code || !reward) {
-                alert('请填写必填项');
-                return;
-            }
+            const gameName = document.getElementById('editGameName').value;
+            const originalCode = document.getElementById('editOriginalCode').value;
+            const expireDate = document.getElementById('editExpireDate').value;
             
             const data = {
-                code: code,
-                rewardDescription: reward,
-                sourcePlatform: document.getElementById('codeSource').value.trim(),
-                sourceUrl: document.getElementById('codeUrl').value.trim(),
-                status: document.getElementById('codeStatus').value,
-                crawlSource: document.getElementById('codeCrawlSource').value,
-                accuracyRate: document.getElementById('codeAccuracy').value ? parseInt(document.getElementById('codeAccuracy').value) : null,
-                verificationSuccessRate: document.getElementById('codeVerification').value ? parseInt(document.getElementById('codeVerification').value) : null
+                code: document.getElementById('editCode').value,
+                rewardDescription: document.getElementById('editReward').value,
+                sourcePlatform: document.getElementById('editSource').value,
+                sourceUrl: document.getElementById('editSourceUrl').value,
+                expireDate: expireDate || null,
+                status: document.getElementById('editStatus').value,
+                crawlSource: document.getElementById('editCrawlSource').value,
+                accuracyRate: parseInt(document.getElementById('editAccuracy').value) || null,
+                verificationSuccessRate: parseInt(document.getElementById('editVerificationRate').value) || null
             };
             
             try {
-                let response;
-                if (editingCode !== null) {
-                    // 编辑模式
-                    response = await fetch(`/api/games/${encodeURIComponent(gameName)}/codes/${encodeURIComponent(currentGame.codes[editingCode].code)}`, {
-                        method: 'PUT',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(data)
-                    });
-                } else {
-                    // 添加模式
-                    response = await fetch(`/api/games/${encodeURIComponent(gameName)}/codes`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(data)
-                    });
-                }
+                const response = await fetch(`/api/games/${encodeURIComponent(gameName)}/codes/${encodeURIComponent(originalCode)}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
                 
                 if (response.ok) {
-                    closeModal('codeModal');
-                    await loadData();
-                    loadGameCodes(gameName);
+                    alert('保存成功');
+                    closeModal('editModal');
+                    loadData();
                 } else {
                     alert('保存失败');
                 }
             } catch (error) {
                 console.error('保存失败:', error);
-                alert('保存失败：' + error.message);
+                alert('保存失败');
             }
-        }
+        });
         
-        // 显示添加游戏模态框
-        function showAddGameModal() {
-            document.getElementById('newGameName').value = '';
-            showModal('gameModal');
-        }
-        
-        // 添加游戏
-        async function addGame() {
-            const gameName = document.getElementById('newGameName').value.trim();
-            if (!gameName) {
-                alert('请输入游戏名称');
-                return;
-            }
+        document.getElementById('addGameForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const gameName = document.getElementById('newGameName').value;
             
             try {
                 const response = await fetch('/api/games', {
@@ -994,70 +1203,59 @@
                 });
                 
                 if (response.ok) {
-                    closeModal('gameModal');
-                    await loadData();
-                    document.getElementById('gameSelect').value = gameName;
-                    loadGameCodes(gameName);
+                    alert('添加成功');
+                    closeModal('addGameModal');
+                    document.getElementById('addGameForm').reset();
+                    loadData();
                 } else {
                     alert('添加失败');
                 }
             } catch (error) {
                 console.error('添加失败:', error);
-                alert('添加失败：' + error.message);
-            }
-        }
-        
-        // 搜索过滤
-        function filterCodes() {
-            if (!currentGame) return;
-            
-            const keyword = document.getElementById('searchBox').value.toLowerCase();
-            const filtered = currentGame.codes.filter(code => 
-                code.code.toLowerCase().includes(keyword) ||
-                (code.rewardDescription && code.rewardDescription.toLowerCase().includes(keyword))
-            );
-            
-            renderCodesTable(filtered);
-        }
-        
-        // 模态框控制
-        function showModal(id) {
-            document.getElementById(id).classList.add('show');
-        }
-        
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('show');
-        }
-        
-        // 更新同步状态
-        function updateSyncStatus(synced) {
-            const status = document.getElementById('syncStatus');
-            if (synced) {
-                status.className = 'sync-status success';
-                status.textContent = '✅ 已同步';
-            } else {
-                status.className = 'sync-status error';
-                status.textContent = '❌ 同步失败';
-            }
-        }
-        
-        // 游戏选择事件
-        document.getElementById('gameSelect').addEventListener('change', function() {
-            if (this.value) {
-                loadGameCodes(this.value);
-            } else {
-                document.getElementById('contentTitle').textContent = '请选择游戏';
-                document.getElementById('codesTableContainer').innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">📦</div>
-                        <div class="empty-state-text">请在左侧选择游戏查看兑换码</div>
-                    </div>
-                `;
+                alert('添加失败');
             }
         });
         
-        // 页面加载时初始化
-        window.addEventListener('load', loadData);
+        document.getElementById('addCodeForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const gameName = document.getElementById('addCodeGame').value;
+            const expireDate = document.getElementById('addExpireDate').value;
+            
+            const data = {
+                code: document.getElementById('addCode').value,
+                rewardDescription: document.getElementById('addReward').value,
+                sourcePlatform: document.getElementById('addSource').value,
+                sourceUrl: document.getElementById('addSourceUrl').value,
+                expireDate: expireDate || null,
+                crawlSource: document.getElementById('addCrawlSource').value,
+                accuracyRate: parseInt(document.getElementById('addAccuracy').value) || null,
+                verificationSuccessRate: parseInt(document.getElementById('addVerificationRate').value) || null
+            };
+            
+            try {
+                const response = await fetch(`/api/games/${encodeURIComponent(gameName)}/codes`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    alert('添加成功');
+                    closeModal('addCodeModal');
+                    document.getElementById('addCodeForm').reset();
+                    loadData();
+                } else {
+                    alert('添加失败');
+                }
+            } catch (error) {
+                console.error('添加失败:', error);
+                alert('添加失败');
+            }
+        });
+        
+        // 初始化
+        loadData();
     </script>
 </body>
 </html>
