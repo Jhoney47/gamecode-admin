@@ -551,7 +551,7 @@
     },
     {
       "gameName": "杖剑传说",
-      "codeCount": 41,
+      "codeCount": 40,
       "codes": [
         {
           "code": "KSTGIFT",
@@ -932,18 +932,6 @@
           "sourceUrl": "http://news.17173.com/content/01122026/231757053.shtml",
           "expireDate": "2026-02-28T00:00:00.000Z",
           "status": "active",
-          "codeType": "limited",
-          "publishDate": "2026-01-12T00:00:00.000Z",
-          "verificationCount": 245,
-          "reviewStatus": "approved"
-        },
-        {
-          "code": "QH666",
-          "rewardDescription": "最新兑换码",
-          "sourcePlatform": "17173",
-          "sourceUrl": "http://news.17173.com/content/01122026/231757053.shtml",
-          "expireDate": "2026-03-12T00:00:00.000Z",
-          "status": "invalid",
           "codeType": "limited",
           "publishDate": "2026-01-12T00:00:00.000Z",
           "verificationCount": 245,
