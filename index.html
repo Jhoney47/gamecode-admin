@@ -451,7 +451,7 @@
             document.getElementById('emptyState').style.display = 'none';
             
             try {
-                const response = await fetch('/api/data');
+                const response = await fetch('/api/games');
                 gameData = await response.json();
                 renderData();
                 updateStats();
