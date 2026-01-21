@@ -1319,7 +1319,7 @@
     },
     {
       "gameName": "测试游戏",
-      "codeCount": 1,
+      "codeCount": 2,
       "codes": [
         {
           "code": "TEST2026",
@@ -1336,6 +1336,24 @@
           "crawlTime": "2026-01-21T10:41:40.860Z",
           "accuracyRate": 95,
           "verificationSuccessRate": 90,
+          "lastVerifiedTime": null,
+          "crawlerVersion": null
+        },
+        {
+          "code": "SYNC2026",
+          "rewardDescription": "测试GitHub同步",
+          "sourcePlatform": "官方",
+          "sourceUrl": "",
+          "expireDate": null,
+          "status": "active",
+          "codeType": "permanent",
+          "publishDate": "2026-01-21T10:45:35.837Z",
+          "verificationCount": 0,
+          "reviewStatus": "approved",
+          "crawlSource": "manual",
+          "crawlTime": "2026-01-21T10:45:35.837Z",
+          "accuracyRate": 98,
+          "verificationSuccessRate": 95,
           "lastVerifiedTime": null,
           "crawlerVersion": null
         }
