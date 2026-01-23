@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-01-23T10:42:21.854Z",
-  "totalCodes": 106,
+  "lastUpdated": "2026-01-23T13:37:33.704Z",
+  "totalCodes": 105,
   "games": [
     {
       "gameName": "铃兰之剑",
@@ -539,7 +539,7 @@
     },
     {
       "gameName": "杖剑传说",
-      "codeCount": 40,
+      "codeCount": 39,
       "codes": [
         {
           "code": "KSTGIFT",
@@ -657,18 +657,6 @@
           "expireDate": null,
           "status": "active",
           "codeType": "permanent",
-          "publishDate": "2026-01-18T12:57:14.000Z",
-          "verificationCount": 0,
-          "reviewStatus": "approved"
-        },
-        {
-          "code": "杖剑半年与你同行",
-          "rewardDescription": "周年庆奖励",
-          "sourcePlatform": "Facebook",
-          "sourceUrl": "https://www.facebook.com/p/杖劍傳說坎斯汀之約-100079946562958/",
-          "expireDate": "2026-01-19T00:00:00.000Z",
-          "status": "active",
-          "codeType": "limited",
           "publishDate": "2026-01-18T12:57:14.000Z",
           "verificationCount": 0,
           "reviewStatus": "approved"
