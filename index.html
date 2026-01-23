@@ -1157,6 +1157,73 @@
             filterAndDisplayCodes();
         });
 
+        // 删除当前游戏
+        async function deleteCurrentGame() {
+            if (!currentGame) return;
+
+            if (!confirm(`⚠️ 警告：确定要删除游戏 "${currentGame}" 吗？\n\n此操作将删除该游戏下的所有兑换码，且不可撤销！`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/games/${encodeURIComponent(currentGame)}`, {
+                    method: 'DELETE'
+                });
+
+                if (response.ok) {
+                    alert('✅ 游戏删除成功');
+                    currentGame = ''; // 重置当前游戏
+                    document.getElementById('gameSelect').value = '';
+                    document.getElementById('deleteGameBtn').style.display = 'none';
+                    loadData(); // 重新加载数据
+                } else {
+                    alert('❌ 删除失败');
+                }
+            } catch (error) {
+                console.error('删除游戏失败:', error);
+                alert('❌ 删除失败: ' + error.message);
+            }
+        }
+
+        // --- 恢复的功能 ---
+
+        function undo() {
+            alert('撤销功能暂未实现 (Server not ready)');
+        }
+
+        async function pushToGitHub() {
+            if (!confirm('确定要手动推送到 GitHub 吗？')) return;
+            try {
+                const response = await fetch('/api/sync/push', { method: 'POST' });
+                const result = await response.json();
+                if (result.success) {
+                    alert('✅ 推送成功: ' + result.message);
+                    document.getElementById('syncStatus').textContent = '已同步';
+                    document.getElementById('syncStatus').className = 'sync-status success';
+                } else {
+                    alert('❌ 推送失败: ' + result.message);
+                }
+            } catch (error) {
+                alert('❌ 请求失败: ' + error.message);
+            }
+        }
+
+        async function pullFromGitHub() {
+            if (!confirm('⚠️ 警告：将强制从 GitHub下载数据并覆盖本地修改！确定继续吗？')) return;
+            try {
+                const response = await fetch('/api/sync/pull', { method: 'POST' });
+                const result = await response.json();
+                if (result.success) {
+                    alert('✅ 拉取成功，页面将刷新');
+                    location.reload();
+                } else {
+                    alert('❌ 拉取失败: ' + result.message);
+                }
+            } catch (error) {
+                alert('❌ 请求失败: ' + error.message);
+            }
+        }
+
         // 表单提交
         document.getElementById('editForm').addEventListener('submit', async function (e) {
             e.preventDefault();
