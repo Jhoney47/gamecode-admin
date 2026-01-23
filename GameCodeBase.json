@@ -1,11 +1,11 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-01-23T03:57:45.291Z",
-  "totalCodes": 107,
+  "lastUpdated": "2026-01-23T10:42:21.854Z",
+  "totalCodes": 106,
   "games": [
     {
       "gameName": "铃兰之剑",
-      "codeCount": 45,
+      "codeCount": 44,
       "codes": [
         {
           "code": "ZN5U3U6BUZ9",
@@ -341,18 +341,6 @@
           "codeType": "permanent",
           "publishDate": "2026-01-18T12:41:13.000Z",
           "verificationCount": 0,
-          "reviewStatus": "approved"
-        },
-        {
-          "code": "HOMASTREAS",
-          "rewardDescription": "100钻",
-          "sourcePlatform": "BWIKI",
-          "sourceUrl": "https://wiki.biligame.com/llzj/%E5%85%91%E6%8D%A2%E7%A0%81%E6%95%B4%E7%90%86",
-          "expireDate": "2024-12-20T16:59:00.000Z",
-          "status": "active",
-          "codeType": "permanent",
-          "publishDate": "2026-01-18T12:41:13.000Z",
-          "verificationCount": 1,
           "reviewStatus": "approved"
         },
         {
