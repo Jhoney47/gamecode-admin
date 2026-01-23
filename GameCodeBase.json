@@ -1,7 +1,7 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-01-21T10:41:40.860Z",
-  "totalCodes": 109,
+  "lastUpdated": "2026-01-23T03:57:45.291Z",
+  "totalCodes": 107,
   "games": [
     {
       "gameName": "铃兰之剑",
@@ -1307,27 +1307,8 @@
     },
     {
       "gameName": "测试游戏",
-      "codeCount": 1,
-      "codes": [
-        {
-          "code": "SYNC2026",
-          "rewardDescription": "测试GitHub同步",
-          "sourcePlatform": "官方",
-          "sourceUrl": "",
-          "expireDate": null,
-          "status": "active",
-          "codeType": "permanent",
-          "publishDate": "2026-01-21T10:45:35.837Z",
-          "verificationCount": 0,
-          "reviewStatus": "approved",
-          "crawlSource": "manual",
-          "crawlTime": "2026-01-21T10:45:35.837Z",
-          "accuracyRate": 98,
-          "verificationSuccessRate": 95,
-          "lastVerifiedTime": null,
-          "crawlerVersion": null
-        }
-      ]
+      "codeCount": 0,
+      "codes": []
     }
   ]
 }
